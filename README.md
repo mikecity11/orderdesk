@@ -2,6 +2,8 @@
 
 **One stock incident. Every affected order, a way forward.**
 
+[Open the deployed demo](https://orderdesk-recovery.vercel.app)
+
 OrderDesk is a supermarket order recovery prototype for Flip the Switch. When a picker discovers damaged or missing stock, it identifies all affected orders, allocates limited stock from another branch, reserves compatible replacements, and coordinates the human decisions needed to recover each order.
 
 ## Working now
