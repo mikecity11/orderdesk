@@ -1,0 +1,1 @@
+{"name":"orderdesk","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node --test tests/*.test.mjs","start":"node server/service.mjs","agent":"node switch/agent.mjs","dev":"node server/dev.mjs"},"engines":{"node":">=22"},"dependencies":{"ai":"^7.0.163","ws":"^8.18.3"}}
