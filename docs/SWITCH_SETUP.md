@@ -102,3 +102,17 @@ Use sample data in the publicly accessible dashboard. Real customer records need
 ## Before claiming a live Switch demo
 
 Record at least one complete report → plan → staff confirmation → manager approval → pack → dispatch flow in the actual Switch chat. Also show a declined replacement replanning and releasing stock. A local browser demonstration or passing mock test alone does not verify real Switch connectivity.
+
+## Local Codex explanation option
+
+If `codex exec --skip-git-repo-check --json "Reply with Hello only"` works with your existing CLI login, stop the Node agent and set these variables in the same PowerShell session:
+
+```powershell
+$env:ORDERDESK_AI_PROVIDER = "codex"
+$env:ORDERDESK_CODEX_PATH = "$env:LOCALAPPDATA\Programs\OpenAI\Codex\bin\codex.exe"
+node switch/agent.mjs
+```
+
+Use the actual executable path if installed elsewhere. In Mattermost send `@OrderDesk explain Why were transfers chosen for OD-1041 and OD-1042, and replacements for OD-1043 and OD-1044?`. Wait up to 90 seconds. A successful response starts with `AI explanation (Codex)`. This uses Codex CLI authentication and usage limits; it does not require copying a login token or API key. The child process runs from a temporary directory in read-only mode, receives the operational summary via stdin, and excludes Switch credentials from its environment. It is instructed to use no tools; the application never parses its output as actions. AI cannot approve, pack or release an order.
+
+Do not describe AI as verified until that live response succeeds.

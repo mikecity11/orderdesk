@@ -8,5 +8,5 @@
 - Completed all four affected orders in the browser: incident Resolved, orders recovered 4/4, order value at risk $0, approved transfer expense $12 (sample values).
 - Fixed packing status to show Packed instead of Ready to pick.
 - Automated tests include recovery rules, stock conservation, consent gates, staff identity checks and mock Switch transport round trip.
-- Live Switch server connectivity and model inference remain unverified and require configuration before submission.
+- Live local Switch/Mattermost connectivity demonstrated November 6: authenticated custom agent, addressed stock report, recovery plan, branch confirmation, manager approval, packing and release for OD-1041. Four sample orders were affected; one became ready for dispatch; remaining sample order value at risk was $298. One operator simulated all five staff roles. AI inference remains unverified until the configured explanation command succeeds.
 - Vercel’s default project protection settings were retained. The standard production alias was independently accessible without disabling those settings.

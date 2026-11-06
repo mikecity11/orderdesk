@@ -16,13 +16,13 @@ OrderDesk is a supermarket order recovery prototype for Flip the Switch. When a 
 - Declined replacements replan to a partial order with a proposed item refund.
 - Timestamped decision history and downloadable JSON export.
 - A server-side Switch WebSocket adapter and persistent local workspace service.
-- Optional AI explanation of the recovery plan through the Vercel AI SDK / AI Gateway.
+- AI explanation of the recovery plan through a locally authenticated Codex CLI or Vercel AI SDK / AI Gateway.
 
 ## Important implementation status
 
 The public website starts in **demo mode**, uses sample data, and explicitly labels role simulation. It is not a live Switch connection. The demo planner is deterministic; it does not pretend to call an LLM.
 
-The live integration code must be configured with an actual Switch deployment, a registered custom agent, room membership, staff participant IDs, and a persistent service host. It has protocol/mock integration tests, but has **not yet been verified against a real Switch server**. The AI explanation feature needs an AI Gateway key and a current model ID. Without them, it returns a labelled rules-based summary.
+The Switch adapter was demonstrated against a real local Switch/Mattermost deployment on November 6, 2026: report → plan → branch confirmation → manager approval → packing → ready to dispatch. Sample orders and a single operator simulating staff roles were used. AI inference still needs a successful configured run; see the setup guide. With no provider configured, the explanation command returns a labelled rules-based summary. The public dashboard remains a separate browser-local demo unless its live service is configured.
 
 No customer messages, payments, refunds, real stock movements, or external supermarket systems are connected. “Ready to dispatch” records readiness, not proof of delivery. Monetary values are sample USD values. Value at risk is affected order value, not a claim of revenue saved.
 
